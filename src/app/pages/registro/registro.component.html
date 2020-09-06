@@ -1,0 +1,74 @@
+<div class="limiter animated fadeInLeft">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-form-title" [ngStyle]="{'background-image': 'url(' + logo + ')'}">
+        <span class="login100-form-title-1">
+          Login Firebase
+        </span>
+      </div>
+      <div class="space-title">
+        <h1 class="title-check">Crea tu nueva cuenta</h1>
+      </div>
+
+      <form class="login100-form validate-form" (ngSubmit)="onSubmit( f )" #f="ngForm">
+
+        <span class="text-danger animated fadeIn"
+         *ngIf="f.submitted && f.controls['email'].errors">El correo es obligatorio</span>
+        <div class="wrap-input100 validate-input m-b-26" data-validate="email is required">
+          <span class="label-input100">Email</span>
+          <input class="input100" type="email"
+          name="email"
+          placeholder="Ingresa tu correo"
+          [(ngModel)]="usuario.email"
+          required
+          email>
+          <span class="focus-input100"></span>
+        </div>
+
+        <span class="text-danger animated fadeIn"
+         *ngIf="f.submitted && f.controls['nombre'].errors">El nombre es obligatorio</span>
+        <div class="wrap-input100 validate-input m-b-26" data-validate="name is required">
+          <span class="label-input100">Nombre</span>
+          <input class="input100" type="text" name="nombre" placeholder="Ingresa el Nombre"
+          [(ngModel)]="usuario.nombre"
+          required
+          minlength="2">
+          <span class="focus-input100"></span>
+        </div>
+
+        <span class="text-danger animated fadeIn"
+         *ngIf="f.submitted && f.controls['password'].errors">Al menos 6 caracteres</span>
+        <div class="wrap-input100 validate-input m-b-18">
+          <span class="label-input100">Contraseña</span>
+          <input class="input100" type="password" name="password" placeholder="Ingresa la contraseña"
+          [(ngModel)]="usuario.password"
+          required
+          minlength="6">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="flex-sb-m w-full p-b-30">
+          <div class="contact100-form-checkbox">
+            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+            <label class="label-checkbox100" for="ckb1">
+              Recordar usuario
+            </label>
+          </div>
+
+          <div>
+            <a routerLink="/login" class="txt1">
+              ya tienes cuenta / Ingresar
+            </a>
+          </div>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn" style="margin-right: 70px;" type="submit">
+            Crear usuario
+          </button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
