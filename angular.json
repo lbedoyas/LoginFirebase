@@ -117,6 +117,17 @@
               "devServerTarget": "LoginFirebase:serve:production"
             }
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "LoginFirebase:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "LoginFirebase:serve:production"
+            }
+          }
         }
       }
     }
